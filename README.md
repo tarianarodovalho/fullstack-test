@@ -19,6 +19,7 @@ For the MarketCap, you can use Yahoo Api or anyother you prefer.
 - Documentation
 
 Send the PR link to junior@canary-data.com
+
 -----
 
 ### Publish your solution
