@@ -18,6 +18,7 @@ For the MarketCap, you can use Yahoo Api or anyother you prefer.
 - Unit Tests
 - Documentation
 
+Send the PR link to junior@canary-data.com
 -----
 
 ### Publish your solution
