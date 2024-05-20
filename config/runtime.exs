@@ -19,7 +19,7 @@ import Config
 if System.get_env("PHX_SERVER") do
   config :inside_trading, InsideTradingWeb.Endpoint, server: true
 end
-# TODO
+
 if config_env() == :prod do
   database_url =
     System.get_env("DATABASE_URL") ||
@@ -33,10 +33,10 @@ if config_env() == :prod do
   config :inside_trading, InsideTrading.Repo,
     # ssl: true,
     url: database_url,
-    pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+    pool_size: String.to_integer(System.get_env("POOL_SIZE") || "20"),
     socket_options: maybe_ipv6
-# TODO
-  # The secret key base is used to sign/encrypt cookies and other secrets.
+
+    # The secret key base is used to sign/encrypt cookies and other secrets.
   # A default value is used in config/dev.exs and config/test.exs but you
   # want to use a different value for prod and you most likely don't want
   # to check this value into version control, so we use an environment

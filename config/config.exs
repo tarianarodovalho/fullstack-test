@@ -9,12 +9,12 @@ import Config
 
 config :inside_trading,
   ecto_repos: [InsideTrading.Repo],
-  finnhub_api_key: System.get_env("FINNHUB_API_KEY"),
+  finnhub_api_key: "cp2l6d9r01qtd8fsn5rgcp2l6d9r01qtd8fsn5s0",
   generators: [timestamp_type: :utc_datetime]
 
 config :inside_trading, InsideTrading.Crawlers.EDGARScraper,
   base_url: "https://www.sec.gov",
-  user_agent: System.get_env("EDGAR_USER_AGENT")
+  user_agent: "InsideTrading Crawler tariana.rodovalho@gmail.com"
 
 # Configures the endpoint
 config :inside_trading, InsideTradingWeb.Endpoint,

@@ -7,8 +7,7 @@ config :inside_trading, InsideTrading.Repo,
   hostname: "localhost",
   database: "inside_trading_dev",
   stacktrace: true,
-  show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+  show_sensitive_data_on_connection_error: true
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -24,7 +23,8 @@ config :inside_trading, InsideTradingWeb.Endpoint,
   code_reloader: true,
   debug_errors: true,
   secret_key_base: "hvoiQZah0WAayFIbFGE8uVMlpK4vsfferQx0rDLGPQEdXaMnTWFgT1kGnETrigua",
-  watchers: []
+  watchers: [],
+  server: true
 
 # ## SSL Support
 #
