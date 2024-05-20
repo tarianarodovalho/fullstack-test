@@ -12,6 +12,8 @@ At last the data collected is stored in the database with details such as the co
 
 As part of the project's extended goals, the system is complemented by a React-based user interface that presents these insights in an accessible format. Unit tests were also created, alongside this comprehensive documentation to ensure reliability and maintainability of the software.
 
+![alt text](<react app example.png>)
+
 ## 1. Setup and Running the Application
 
 ### Prerequisites
