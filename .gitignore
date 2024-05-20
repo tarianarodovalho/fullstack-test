@@ -23,6 +23,8 @@ erl_crash.dump
 
 # Temporary files
 /tmp
+dets_simple_storage
+erl_crash.dump
 
 # Static artifacts
 /node_modules

@@ -38,7 +38,6 @@ config :inside_trading, InsideTrading.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configures Elixir's Logger
 config :logger, :console,
-level: :debug,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
