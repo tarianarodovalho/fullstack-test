@@ -17,15 +17,52 @@ As part of the project's extended goals, the system is complemented by a React-b
 ### Prerequisites
 - Elixir 1.14 or higher
 - Phoenix 1.7 or higher
-- PostgreSQL 12 or higher
+- React 13.4 or higher
+- Docker (for PostgreSQL)
 - API key for Finnhub
 - User-Agent for SEC Edgar
 
 ### Installation Steps
-1. 
+1. **Clone the BE repository on a terminal tab:**
+  ```bash
+  git clone https://github.com/tarianarodovalho/fullstack-test.git
+  cd fullstack-test
+  ```
 
-2. **Visit the application:**
+2. **Install dependencies:**
+  ```bash
+  mix deps.get
+  ```
+
+3. **Start Docker:**
+  ```bash
+  docker compose up -d
+  ```
+   
+4. **Create and migrate your database:**
+  ```bash
+  mix ecto.create && mix ecto.migrate
+  ```
+
+5. **Run the BE application:**
+  ```bash
+  mix phx.server
+  ```
+
+6. **Clone the FE repository on another terminal tab**:
+  ```bash
+  git clone https://github.com/tarianarodovalho/insider-trades-fe.git
+  cd insider-trades-fe
+  ```
+
+7. **Run the FE application:**
+  ```bash
+    npm start
+  ```
+
+8. **Visit the application:**
    Open `http://localhost:3000` in your web browser to see the application running.
+   Go to `http://localhost:3000/api/filings` to access the endpoint with the latest inside trades listed.
 
 ## 2. API Documentation
 
@@ -107,6 +144,9 @@ The application architecture is structured to promote separation of concerns, mo
 - **Implement caching**: Reduce API request overhead by caching responses, like the Outstanding Shares Amount collected for a ticker on previous filings.
 - **Expiration of Older Securities**: If plausible, to maintain data relevance and optimize database performance, implement an expiration mechanism that removes or archives securities entries after a defined period of irrelevance.
 
+### Container infrastructure
+- **Implement docker and docker compose**: To be more reliable and easy to setup, creating a proper Dockerfile and a complete docker compose structure.
+
 ### Feature Extensions
 - **Websockets for Real-Time Updates**: Use Phoenix Channels to push real-time updates to users when new filings are fetched.
 - **Pagination of EdgarScraper calls**: Enhance the EdgarScraper to implement pagination when fetching the latest filings, ensuring that all relevant filings from the last hour are collected, not just the first 100, reducing the risk of missing critical information due to volume limits.
@@ -116,3 +156,6 @@ The application architecture is structured to promote separation of concerns, mo
 
 ### UI/UX Enhancements
 - **Sorting icons**: It is possible to sort the different table columns by alphabetical order by clicking on the column name, however there's no indication of it on the page. Adding sorting icons beside each column name would help users identify the possibility more intuitively.
+
+### Security
+- **Env Vars**: Aiming the simplicity and easy testing of the project, the environment variables were hardcoded on config files. It is strongly advisable to have them configured on a .env file for enhanced security.

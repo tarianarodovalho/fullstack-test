@@ -8,6 +8,8 @@ services:
       POSTGRES_DB: "inside_trading_dev"
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
+    networks:
+      - app-net
   # backend:
   #   build: .
   #   depends_on:
@@ -15,4 +17,10 @@ services:
   #   ports:
   #     - "4000:4000"
   #   environment:
-  #     DATABASE_URL: ecto://postgres:postgres@localhost:5432/inside_trading_dev
+  #     DATABASE_URL: ecto://postgres:postgres@db:5432/inside_trading_dev
+  #   networks:
+  #     - app-net
+
+networks:
+  app-net:
+    driver: bridge
